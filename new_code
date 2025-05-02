@@ -1,0 +1,18 @@
+from depthai_sdk import OakCamera
+import depthai
+
+# Download & deploy a model from Roboflow Universe
+# https://universe.roboflow.com
+
+model_config = {
+        'source': 'roboflow',
+        'model':  'rock-paper-scissors-sxsw-dpius/2',
+        'key':    'lExOYUcWYjQ7hxafJHcj',
+        'compiled' : True
+    }
+
+with OakCamera() as oak:
+    color = oak.create_camera('color')
+    nn = oak.create_nn(model_config, color)
+    oak.visualize(nn, fps=True)
+    oak.start(blocking=True)
