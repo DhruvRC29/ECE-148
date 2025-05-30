@@ -1,0 +1,4 @@
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+<build_depend>ackermann_msgs</build_depend>
+<exec_depend>ackermann_msgs</exec_depend>
